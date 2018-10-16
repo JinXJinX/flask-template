@@ -13,23 +13,26 @@ def page1():
 
 @app.route("/page2")
 def page2():
-    """A example of using a inner folder"""
+    """A example of using a inner folder. This template is located in
+    flask_template/app/templates/inner/
+    """
     return render_template("inner/page2.html")
 
 
 @app.route("/page3/<name>")
 def page3(name):
-    """render_template takes key word arguments, and use them to
-    render template
+    """function `render_template` takes keyword arguments. Those
+    variables are available when rendering template
     """
     return render_template("page3.html", name=name)
 
 
 @app.route("/page4/<name>")
 def page4(name):
-    """A elegant and recommended way to pass key word arguments.
+    """A elegant and recommended way to pass keyword arguments to
+    `render_template`.
 
-    In this function,
+    In this example,
     `render_template("page4.html", **data)` is equivalent to
     `render_template("page4.html", name=name, word1="apple", word2="banana")`
     """
@@ -43,7 +46,11 @@ def page4(name):
 
 @app.route("/page5")
 def page5():
-    """Using a for loop in jinja2"""
+    """Loop
+
+    References:
+        http://jinja.pocoo.org/docs/2.10/templates/#for
+    """
     fruits = ["apple", "banana", "pear", "peach", "durian"]
 
     data = {
@@ -54,7 +61,11 @@ def page5():
 
 @app.route("/page6")
 def page6():
-    """Using condition"""
+    """If Statements
+
+    References:
+        http://jinja.pocoo.org/docs/2.10/templates/#if
+    """
     import random
     data = {
         "num": random.random()
@@ -64,17 +75,31 @@ def page6():
 
 @app.route("/page7")
 def page7():
-    """Using block & extends"""
+    """Template Inheritance
+
+    References:
+        http://jinja.pocoo.org/docs/2.10/templates/#template-inheritance
+    """
     return render_template("page7.html")
 
 
 @app.route("/page8")
 def page8():
-    """One more example of using block & extends"""
+    """Template Inheritance. One more example"""
     return render_template("page8.html")
 
 
 @app.route("/page9")
 def page9():
     """A serious example"""
-    return render_template("page8.html")
+    data = {
+        "title": "a title",
+        "name": "The Zen of Python",
+        "aphorisms": [
+            "Beautiful is better than ugly.",
+            "Explicit is better than implicit.",
+            "Simple is better than complex.",
+            "..."
+        ]
+    }
+    return render_template("serious_temp/index.html", **data)
