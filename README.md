@@ -1,4 +1,4 @@
-Sample
+Challenge
 
 # How To Run
 
