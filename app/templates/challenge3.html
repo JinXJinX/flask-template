@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h4>Now you got the ancient weapon. But you need input two codes to fire the weapon.</h4>
+  <h4>To get the code word, checkout hint1 and hint2</h4>
+  <a class="btn btn-info" href="/hint1" target="_blank">Hint 1</a>
+  <a class="btn btn-info" href="/hint2" target="_blank">Hint 2</a>
+
+  <hr>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="label_code1">Code1</span>
+    </div>
+    <input type="text" name="code1" class="form-control" aria-describedby="label_code1">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="label_code2">Code2</span>
+    </div>
+    <input type="text" name="code2" class="form-control" aria-describedby="label_code2">
+  </div>
+  <button class="btn btn-info" id="btn_activate">Fire</button>
+
+  <div id="div_rst">
+  </div>
+
+{% endblock %}
+
+{% block js %}
+  {{super()}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script src="/static/js/clg3.js"></script>
+  <script>clg3.init()</script>
+{% endblock %}

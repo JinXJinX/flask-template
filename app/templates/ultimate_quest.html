@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  {% if rst %}
+  <h3>'Come with me, Devon. Don't be scared!'</h3>
+  <h3>'Thank you for saving me.'</h3>
+  <h3>'My pleasure, Devon.'</h3>
+
+  <h3>You rescued Devon from the tower and gently put him on you strong back. You two flew high in the sky. They flew over the tower and the castle, over the mountains and caves, and out towards the deep blue ocean.</h3>
+  <h3>'Whee! I can fly!'</h3>
+
+  <h3>Devon and you flew to the castle. The king and queen were so happy to see Devon they gave you the bag of gold. They all lived happily ever after. </h3>
+  <h3>'Thank you for saving Devon!'</h3>
+  <h3>'My pleasure!' </h3>
+  <h3> --- The End ---</h3>
+  {% endif %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>List</th>
+        <th>Target</th>
+        <th>Expected Result</th>
+        <th>Real Result</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for case in test_cases %}
+        <tr>
+          <td>{{case.list}}</td>
+          <td>{{case.target}}</td>
+          <td>{{case.result}}</td>
+          <td>{{case.real_result}}</td>
+          <td>{% if case.result == case.real_result %} ✅ {% else %} ❌ {% endif %}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>In function 'hint1', variable 'data' contains 7 values</h3>
+  <img src="/static/img/hint1.png" width='500px'>
+  <h3>Modify those 7 boolean values, To get 7 ✅ below ⬇️ </h3>
+  <br>
+  {% if byte0 %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  {% if byte0 and (byte0 == byte1) %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  {% if not byte2 %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  {% if byte2 and byte3 %}
+  ❌
+  {% else %}
+  ✅
+  {% endif %}
+
+  {% if byte2 == byte4 and byte3 != byte4 %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  {% if byte5 and byte6 %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  {% if byte6 != False %}
+  ✅
+  {% else %}
+  ❌
+  {% endif %}
+
+  <br>
+  <h3>Boolean data usually use '1' represent True, use '0' represent False</h3>
+  <h3>Convert the bool values you get to binary number,</h3>
+  <h3>And use the tool you just repaired to convert binary number to a string. That string is the code1</h3>
+
+{% endblock %}

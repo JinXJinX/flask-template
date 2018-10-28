@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <img src="/static/img/hint2.png" width='500px'>
+  <h3>In file "app/templates/hint2.html", use jinja2's grammar write a loop, iterate index num in the list 'indexs'</h3>
+  <h3>Every index number represent a letter in the list 'letters'.</h3><h3>variables: 'indexs' and 'letters' are already passed to this html template</h3> <br>
+  <h3>For example:</h3> <h4>'indexs' contians [5, 2, 0, 9, 10, 9],</h4> <h4>'letters' contains ['d', 'x', 'i', 'q', 'p', 'k', 'l', 'b', 's', 'o', 'y']</h4>
+
+  <h4>the first number in 'indexs' is 5. use this number, you can get a letter 'k'.</h4>
+  <h4>follow this way, you can get a word 'kidoyo'</h4>
+  <h4>5 -> k</h4> <h4>2 -> i</h4> <h4>0 -> d</h4> <h4>9 -> o</h4> <h4>10 -> y</h4> <h4>9 -> o</h4>
+
+  <h1>The result will be displayed here ⬇️ </h1>
+  {# Start edit code from this line #}
+
+  {# Stop edit code below this line #}
+  <h1>----------------------------------</h1>
+
+{% endblock %}
