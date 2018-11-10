@@ -88,7 +88,12 @@ def hint2():
 
 def sum2(nums, target):
     """Part of Ultimate Quest"""
-    # Start edit code from this line
+    dic = {}
+    for idx, num in enumerate(nums):
+        if num in dic:
+            return [dic[num], idx]
+        dic[target - num] = idx
+
 
     # Stop edit code below this line
 
@@ -134,10 +139,7 @@ def ultimate_quest():
     ]
 
     for case in test_cases:
-        try:
-            rst = sum2(case["list"], case["target"])
-        except Exception:
-            rst = None
+        rst = sum2(case["list"], case["target"])
         case["real_result"] = rst
 
     data = {
@@ -145,5 +147,6 @@ def ultimate_quest():
         "rst": all([case["result"] == case["real_result"]
                    for case in test_cases])
     }
+    print(data)
 
     return render_template("ultimate_quest.html", **data)
