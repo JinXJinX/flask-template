@@ -1,0 +1,16 @@
+class FlaskInternalConfig:
+    ENV = "development"  # development | production
+    DEBUG = True
+    SECRET_KEY = "<Secret Key>"
+    # generate secret key by
+    # ``` python -c 'import os; print(os.urandom(16))' ```
+
+
+class Database:
+    CONFIG = {
+        "host": "localhost",
+        "port": 27017,
+        "db": "<Database Name>",
+        "user": "<User Name>",
+        "pw": "<Password>",
+    }
